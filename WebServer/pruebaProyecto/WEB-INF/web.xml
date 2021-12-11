@@ -1,0 +1,21 @@
+<web-app>
+	<servlet>
+		<servlet-name>prueba1</servlet-name>
+		<servlet-class>prueba1</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>prueba1</servlet-name>
+		<url-pattern>/prueba1</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>checklogin</servlet-name>
+		<servlet-class>checklogin</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>checklogin</servlet-name>
+		<url-pattern>/checklogin</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
