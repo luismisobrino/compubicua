@@ -71,6 +71,34 @@ INSERT INTO `invernadero` VALUES (4,'ALCALÁ DE HENARES','2021-12-25 16:26:40','
 UNLOCK TABLES;
 
 --
+-- Table structure for table `invernadero_usuario`
+--
+
+DROP TABLE IF EXISTS `invernadero_usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invernadero_usuario` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_invernadero` bigint(20) unsigned NOT NULL,
+  `id_usuario` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_invernadero` (`id_invernadero`),
+  KEY `id_usuario` (`id_usuario`),
+  CONSTRAINT `invernadero_usuario_ibfk_1` FOREIGN KEY (`id_invernadero`) REFERENCES `invernadero` (`id`),
+  CONSTRAINT `invernadero_usuario_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `invernadero_usuario`
+--
+
+LOCK TABLES `invernadero_usuario` WRITE;
+/*!40000 ALTER TABLE `invernadero_usuario` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invernadero_usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `planta`
 --
 
@@ -81,6 +109,7 @@ CREATE TABLE `planta` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `id_invernadero` bigint(20) unsigned DEFAULT NULL,
   `tipo` varchar(30) DEFAULT NULL,
+  `nombre` varchar(80) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
@@ -144,6 +173,9 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `email` varchar(50) NOT NULL,
   `contraseña` varchar(100) DEFAULT NULL,
+  `ubicacion` varchar(50) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -166,4 +198,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-26 11:47:28
+-- Dump completed on 2021-12-27 17:10:40
