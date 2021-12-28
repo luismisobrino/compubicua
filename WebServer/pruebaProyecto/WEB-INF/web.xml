@@ -21,6 +21,14 @@
 		<servlet-name>checklogin</servlet-name>
 		<url-pattern>/checklogin</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>PruebaChart</servlet-name>
+		<servlet-class>PruebaChart</servlet-class>
+	</servlet>
 	
+	<servlet-mapping>
+		<servlet-name>PruebaChart</servlet-name>
+		<url-pattern>/PruebaChart</url-pattern>
+	</servlet-mapping>
 	
 </web-app>
