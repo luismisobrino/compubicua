@@ -19,14 +19,17 @@ int redLED = 7;*/
 int UmbralSuelo = 800;
 
 // **********************VENTILADOR************************
-const int pinVentilador = 9;
+const int pinVentilador = D1;
 const float thresholdLOW = 20.0;
 const float thresholdHIGH= 30.0;
 bool estado_ventilador = false; /// ventilador activo o inactivo
 float GetTemperature(){
   return 20.0;  //sustituir en funcion del sensor empleado
 }
-// **********************VENTILADOR************************
+
+const int pinBomba1 = D2
+//const int pinBombaLed
+
 int light = 0;
 int pinLight = 34;
 
@@ -51,7 +54,7 @@ const char* mqttPassword = "ubicomp";
 //************Tópicos***********
 #define light_topic “esp32/light"
 #define temperature_topic “esp32/temperature“
-#define temperature_topic “esp32/ground_humidity“
+#define groundHumidity_topic “esp32/ground_humidity“
 
 //declaramos un WIFIClient objeto
 WifiCliente espClient;
@@ -62,6 +65,7 @@ void setup(){
   //********conexión********
   Serial.begin(115200);
   WiFi.begin(ssid,password);
+  client.setCallback(callback);
   while (WiFi.status()!= WL_CONNECTED) {
     delay(500);
     Serial.println("Connectingto WiFi..");
@@ -72,13 +76,14 @@ void setup(){
     Serial.println("Connectingto MQTT...");
     if (client.connect("ESP32Client",mqttUser, mqttPassword )) {
       Serial.println("connected");
+      client.subscribe(temperature_topic);
+      client.subscribe(groundHumidity_topic);
     }else {
       Serial.print("failedwith state ");
       Serial.print(client.state());
       delay(2000);
     }
   }
-  client.publish("esp/test","Hello from ESP32");
   
   //*********YL69**********
   pinMode(rainPin1, INPUT);
@@ -116,6 +121,7 @@ void loop() {
     dtostrf(sensorValue2,5, 5, buffer_tierra2);
     client.publish(light_topic, buffer_tierra);
     client.publish(light_topic, buffer_tierra);
+    }
 
    //accionar bomba
 
@@ -140,4 +146,27 @@ void loop() {
 
   
    delay(5000);  // esperar 5 segundos entre mediciones
+}
+
+void callback(char* topic, byte* payload, unsigned int length) {
+  Serial.print("Mensaje recibido [");
+  Serial.print(topic);
+  Serial.print("] ");
+  
+  if ((strcmp(payload, "on") == 0 || strcmp(payload, "On") == 0 || strcmp(payload, "ON") == 0) && strcmp(topic, temperature_topic) == 0){
+    digitalWrite(pinVentilador, HIGH);
+  }
+  else if ((strcmp(payload, "off") == 0 || strcmp(payload, "OFF") == 0 || strcmp(payload, "Off") == 0) && strcmp(topic, temperature_topic) == 0){
+    digitalWrite(pinVentilador, LOW);
+  }
+
+  else if ((strcmp(payload, "on") == 0 || strcmp(payload, "On") == 0 || strcmp(payload, "ON") == 0) && strcmp(topic, groundHumidity_topic) == 0){
+    digitalWrite(pinBomba, HIGH);**********************
+  }
+  else if ((strcmp(payload, "off") == 0 || strcmp(payload, "OFF") == 0 || strcmp(payload, "Off") == 0) && strcmp(topic, groundHumidity_topic) == 0){
+    digitalWrite(piBomba, LOW);*************************
+  }
+    
+
+  Serial.println();
 }
