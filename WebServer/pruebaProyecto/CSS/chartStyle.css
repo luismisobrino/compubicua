@@ -1,0 +1,76 @@
+.first{
+    position: static;
+    border: 3px solid #427200;          
+    height: 500px;
+    width: 1450px;
+    max-height: 500px;
+    max-width: 1450px;
+}
+.second{
+    position: static;
+    border: 3px solid #427200;          
+    height: 500px;
+    width: 1450px;
+    max-height: 500px;
+    max-width: 1450px;
+}
+.first1{
+    position: relative;
+    left: 35px;
+    top: 35px;
+    border: 3px solid #09daff;
+    height: 450px;
+    width: 650px;
+    max-width: 650px;
+    max-height: 400px;
+
+}
+.second2{
+    position: relative;
+    left: 750px;
+    top: -370px;
+    border: 3px solid #27cf11;
+    height: 450px;
+    width: 650px;
+    max-width: 650px;
+    max-height: 400px;
+
+}
+.second1{
+    position: relative;
+    left: 35px;
+    top: 35px;
+    border: 3px solid #596769;
+    height: 450px;
+    width: 650px;
+    max-width: 650px;
+    max-height: 400px;
+
+}
+
+
+#GraficaHumedadAire {
+    position: relative;    
+    border: 3px solid #73AD21;
+    height: 400px;
+    width: 650px;
+    max-width: 650px;
+    max-height: 400px;
+}
+
+#GraficaHumedadTierra {
+    position: absolute;    
+    border: 3px solid #e44901;
+    height: 450px;
+    width: 650px;
+    max-width: 650px;
+    max-height: 400px;
+}
+#GraficaTemperatura{
+    position: relative;    
+    border: 3px solid #3943cf;
+    height: 400px;
+    width: 650px;
+    max-width: 650px;
+    max-height: 400px;
+}

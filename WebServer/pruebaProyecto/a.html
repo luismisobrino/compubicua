@@ -7,8 +7,9 @@
     <script src="lib/jquery.min.js"></script>     
     <script src="lib/chart.min.js"></script>   
     <title>Login</title>
+    
 </head>
-<body>
+<body>    
     <h1 id="titulo">LOGIN</h1><br><br>
     <div id="time">0</div>
 
@@ -26,8 +27,15 @@
         <br>
         <input type="submit" value="Login"> <br><br>
     </form>
-    <div>
-        <canvas id="myChart"></canvas>
+    <style>#chart {
+        position: relative;
+        left: 340px;
+        border: 3px solid #73AD21;
+        width: 400px;
+        height: 300px;
+      }</style>
+    <div id="chart">
+        <canvas id="myChart" ></canvas>
     </div>
     
     <script src="lib/chart.min.js"></script>   

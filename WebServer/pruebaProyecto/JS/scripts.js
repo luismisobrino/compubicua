@@ -1,8 +1,7 @@
 $(document).ready(function () {
-    console.log('sasdfasdf')
-
-
+    
 });
+
 function cambiarTitulo() {
     $.ajax({
         data: {},
@@ -35,7 +34,8 @@ let myChart; //Variable global para poder actualizar el mismo canvas varias vece
 
 function lineChart(data) {
     
-    var ctx = $('#myChart')
+    var ctx = $('#myChart')    
+    
     const config = {
         type: 'line',
         data: {
@@ -65,4 +65,4 @@ function lineChart(data) {
     
 }
 setInterval(cambiarTitulo, 1000);
-setInterval(crearTablaHumedad,5000);
+setInterval(crearTablaHumedad,1000);    

@@ -1,6 +1,6 @@
 <web-app>
 	<welcome-file-list>
-        	<welcome-file>a.html</welcome-file>
+        	<welcome-file>loginform.html</welcome-file>
     	</welcome-file-list>
 	<servlet>
 		<servlet-name>ServletAjax</servlet-name>
@@ -31,4 +31,31 @@
 		<url-pattern>/PruebaChart</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>ChartHumedadAire</servlet-name>
+		<servlet-class>ChartHumedadAire</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ChartHumedadAire</servlet-name>
+		<url-pattern>/ChartHumedadAire</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ChartTemperatura</servlet-name>
+		<servlet-class>ChartTemperatura</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ChartTemperatura</servlet-name>
+		<url-pattern>/ChartTemperatura</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ChartHumedadTierra</servlet-name>
+		<servlet-class>ChartHumedadTierra</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ChartHumedadTierra</servlet-name>
+		<url-pattern>/ChartHumedadTierra</url-pattern>
+	</servlet-mapping>
 </web-app>
