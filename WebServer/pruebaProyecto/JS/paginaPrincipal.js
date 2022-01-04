@@ -3,7 +3,8 @@ $(document).ready(function () {
     crearTablaTemperatura();
     crearTablaHumedadTierra();
     setPlantasUsuario();
-    $('.user').text("Bienvenido, "+localStorage.getItem("usuario"));   
+    $('.user').text(localStorage.getItem("usuario"));   
+    $('.welcome').text("Bienvenido, "+localStorage.getItem("usuario"));   
     $('.plantaSeleccionada').text("Planta seleccionada: "+plantas[idPlanta]); 
     
 });
