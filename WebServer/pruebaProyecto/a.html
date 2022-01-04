@@ -13,11 +13,11 @@
     <h1 id="titulo">LOGIN</h1><br><br>
     <div id="time">0</div>
 
-    <form action="PruebaChart" method="post">
+    <form action="GetPlantasUsuario" method="post">
         <table>
             <tr>
                 <td>Name:</td>
-                <td><input type="text" name="name" value="User"></td>            
+                <td><input type="text" name="usuario" value="usuario"></td>            
             </tr>        
             <tr>
                 <td>Password:</td>
@@ -27,13 +27,7 @@
         <br>
         <input type="submit" value="Login"> <br><br>
     </form>
-    <style>#chart {
-        position: relative;
-        left: 340px;
-        border: 3px solid #73AD21;
-        width: 400px;
-        height: 300px;
-      }</style>
+    
     <div id="chart">
         <canvas id="myChart" ></canvas>
     </div>

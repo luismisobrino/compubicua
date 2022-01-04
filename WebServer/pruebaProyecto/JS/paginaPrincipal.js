@@ -2,12 +2,36 @@ $(document).ready(function () {
     crearTablaHumedadAire();
     crearTablaTemperatura();
     crearTablaHumedadTierra();
-
+    setPlantasUsuario();
+    $('.user').text("Bienvenido, "+localStorage.getItem("usuario"));   
+    $('.plantaSeleccionada').text("Planta seleccionada: "+plantas[idPlanta]); 
+    
 });
 let idPlanta=1;
+let plantas;
 let tablaHumedadAire;
 let tablaTemperatura;
 let tablaHumedadTierra;
+
+function setPlantasUsuario(){
+    $.ajax({
+        data: {usuario: localStorage.getItem('usuario')},
+        url: "GetPlantasUsuario",
+        error: function (jpXHR, textStatus, errorThrown) { },
+        type: 'post',
+        async: false,
+        success: (response) => {
+            response = JSON.parse(response);                                    
+            plantas=response;
+            var list= document.getElementById("submenu2");
+            for(var i in response){
+                var li= document.createElement('li');                
+                li.innerHTML="<a onclick='javascript:seleccionarPlanta("+i+")' class='nav-link px-0'> <span class='cambioColor d-none d-sm-inline' >"+response[i]+"</span></a>"
+                list.appendChild(li);
+            }
+        }
+    })
+}
 function crearTablaHumedadAire() {
     $.ajax({
         data: {idPlanta:idPlanta},
@@ -134,8 +158,10 @@ function crearTablaHumedadTierra() {
 }
 function seleccionarPlanta(id){
     idPlanta=id
+    $('.plantaSeleccionada').text("Planta seleccionada: "+plantas[idPlanta]); 
     crearTablaHumedadAire();
     crearTablaTemperatura();
+    crearTablaHumedadTierra();
 }
 
 //setInterval(crearTablaHumedad, 3000);    

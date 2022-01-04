@@ -58,4 +58,13 @@
 		<servlet-name>ChartHumedadTierra</servlet-name>
 		<url-pattern>/ChartHumedadTierra</url-pattern>
 	</servlet-mapping>
+		<servlet>
+		<servlet-name>GetPlantasUsuario</servlet-name>
+		<servlet-class>GetPlantasUsuario</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetPlantasUsuario</servlet-name>
+		<url-pattern>/GetPlantasUsuario</url-pattern>
+	</servlet-mapping>
 </web-app>

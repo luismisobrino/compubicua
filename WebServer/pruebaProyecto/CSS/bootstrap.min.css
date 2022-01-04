@@ -1,3 +1,43 @@
+.contenedorTop{
+    position: relative;
+}
+
+.cambioColor {color:#ededed;}
+
+.cambioColor:hover {color:rgb(7, 73, 46);}
+
+.divUsuario{
+    position: absolute;
+    top:22.5px;
+    right:0;
+}
+
+.divMenu{
+    position: absolute;
+    top:0;
+    left:100px;
+}
+
+.divLogo{
+    position: relative;
+}
+
+.divNombre{
+    position:relative;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    margin:auto;
+}
+.Nombre{
+    position:relative;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    margin:auto;
+}
 /*!
  * Bootswatch v5.1.3
  * Homepage: https://bootswatch.com
