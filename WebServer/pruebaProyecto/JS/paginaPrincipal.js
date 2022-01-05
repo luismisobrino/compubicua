@@ -42,16 +42,22 @@ function crearTablaHumedadAire() {
         async: false,
         success: (response) => {
             response = JSON.parse(response);
-
+            var label = [];
+            for (var i = 1; i <= response.length; i++) {
+                label.push(i);
+            }
             var ctx = $('#GraficaHumedadAire');
 
             const config = {
                 type: 'line',
                 data: {
-                    labels: response,
+                    labels: label,
                     datasets: [{
                         label: 'Nivel de humedad',
-                        data: response
+                        data: response,
+                        borderColor: '#c54560',
+                        backgroundColor: '#ff6384',
+                        fill:true
                     }]
                 },
                 options: {
@@ -64,7 +70,27 @@ function crearTablaHumedadAire() {
                             display: true,
                             text: 'Historico de humedad del aire'
                         }
-                    }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                      }, 
+                    scales: {
+                        x: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Nº Medida'
+                          }
+                        },
+                        y: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Valor'
+                          }
+                        }
+                      }
                 },
             };
             if (tablaHumedadAire instanceof Chart) {
@@ -83,16 +109,22 @@ function crearTablaTemperatura() {
         async: false,
         success: (response) => {
             response = JSON.parse(response);
-
+            var label = [];
+            for (var i = 1; i <= response.length; i++) {
+                label.push(i);
+            }
             var ctx = $('#GraficaTemperatura')
 
             const config = {
                 type: 'line',
                 data: {
-                    labels: response,
+                    labels: label,
                     datasets: [{
                         label: 'Temperatura',
-                        data: response
+                        data: response,
+                        borderColor: '#308bc9',
+                        backgroundColor: '#36a2eb',
+                        fill:true                    
                     }]
                 },
                 options: {
@@ -105,7 +137,27 @@ function crearTablaTemperatura() {
                             display: true,
                             text: 'Historico de temperatura'
                         }
-                    }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                      }, 
+                    scales: {
+                        x: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Nº Medida'
+                          }
+                        },
+                        y: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Valor'
+                          }
+                        }
+                      }
                 },
             };
             if (tablaTemperatura instanceof Chart) {
@@ -125,16 +177,22 @@ function crearTablaHumedadTierra() {
         async: false,
         success: (response) => {
             response = JSON.parse(response);
-
+            var label = [];
+            for (var i = 1; i <= response.length; i++) {
+                label.push(i);
+            }
             var ctx = $('#GraficaHumedadTierra')
 
             const config = {
                 type: 'line',
                 data: {
-                    labels: response,
+                    labels: label,
                     datasets: [{
                         label: 'Humedad de la tierra',
-                        data: response
+                        data: response,
+                        borderColor: '#a34ecc',
+                        backgroundColor: '#cc65fe',
+                        fill:true            
                     }]
                 },
                 options: {
@@ -147,7 +205,27 @@ function crearTablaHumedadTierra() {
                             display: true,
                             text: 'Historico de humedad de la tierra'
                         }
-                    }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                      }, 
+                    scales: {
+                        x: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Nº Medida'
+                          }
+                        },
+                        y: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Valor'
+                          }
+                        }
+                      }
                 },
             };
             if (tablaHumedadTierra instanceof Chart) {
