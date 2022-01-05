@@ -58,7 +58,7 @@
 		<servlet-name>ChartHumedadTierra</servlet-name>
 		<url-pattern>/ChartHumedadTierra</url-pattern>
 	</servlet-mapping>
-		<servlet>
+	<servlet>
 		<servlet-name>GetPlantasUsuario</servlet-name>
 		<servlet-class>GetPlantasUsuario</servlet-class>
 	</servlet>
@@ -66,5 +66,14 @@
 	<servlet-mapping>
 		<servlet-name>GetPlantasUsuario</servlet-name>
 		<url-pattern>/GetPlantasUsuario</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>GetHistorial</servlet-name>
+		<servlet-class>GetHistorial</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetHistorial</servlet-name>
+		<url-pattern>/GetHistorial</url-pattern>
 	</servlet-mapping>
 </web-app>

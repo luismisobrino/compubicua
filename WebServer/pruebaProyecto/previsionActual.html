@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
     <link href="CSS/chartStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
     <script src="lib/jquery.min.js"></script>     
     <script src="lib/chart.min.js"></script>   
     <title>Página de inicio Plants & Co.</title>
@@ -73,18 +74,17 @@
                     </div>
                 </div>
                 <div class="col py-3">
-                    <h2>¿Quienes somos?</h2>
-                    <p>Somos un grupo de alumnos de la universidad de Alcalá de Henares, cursantes de la asignatura Computación Ubicua los cuales hemos desarrollado un software
-                        para el mantenimiento de plantas de forma remota.
-                    </p>
-                    <h2>¿Que buscamos?</h2>
-                    <p>Con nuestro desarrollo, buscamos ofrecer una experiencia completa al usuario, una aplicación donde poder tener el control absoluto de la planta que tiene alojada en 
-                        nuestro sistema, comprobar su evolución, consultar el historial de mediciones, datos ambientales de la ubicación del usuario...
-                    </p>
+                    <h5 class="plantaSeleccionada"></h5>      
+                    <iframe src="https://www.meteoblue.com/es/weather/widget/three/san-fernando-de-henares_spain_3110627?geoloc=fixed&nocurrent=0&noforecast=0&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=image"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 460px; height: 594px"></iframe>
+   
                 </div>
             </div>
         </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="JS/paginaPrincipal.js"></script>
+    <script src="./js/app.js"> </script>
+    <script src="//code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
   </body>
 </html>
